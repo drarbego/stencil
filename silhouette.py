@@ -38,7 +38,7 @@ import bpy
 
 
 DEFAULT_MAX_RESOLUTION = 256
-DEFAULT_EXTRUDE_DEPTH = 0.005  # 0.5 cm in metres
+DEFAULT_EXTRUDE_DEPTH = 0.002  # 2 mm
 
 # Physical canvas size in metres (22 cm × 22 cm)
 # Adjust this to your printer's print bed dimensions
@@ -193,7 +193,7 @@ def main() -> None:
     print(f"Saved: {blend_path}")
 
     stl_path = base_path + ".stl"
-    bpy.ops.export_mesh.stl(filepath=stl_path)
+    bpy.ops.wm.stl_export(filepath=stl_path)
     print(f"Saved: {stl_path}")
 
 
